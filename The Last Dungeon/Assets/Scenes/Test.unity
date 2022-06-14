@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 1712688829}
   dummyCam: {fileID: 1837303982}
-  state: 7
+  state: 6
 --- !u!65 &31384470
 BoxCollider:
   m_ObjectHideFlags: 0
