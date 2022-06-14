@@ -10,9 +10,9 @@ public class HealthControl : MonoBehaviour
     public Image fill;
     public void SetMaxHealth(int health)
     {
-       HealthSlider.maxValue = health;
+        HealthSlider.maxValue = health;
         HealthSlider.value = health;
-      fill.color = gradient.Evaluate(1f);
+       fill.color = gradient.Evaluate(1f);
     }
     public void SetHealth(int health)
     {
