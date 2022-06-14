@@ -22,9 +22,9 @@ public class PlayerControl : MonoBehaviour
      Dead
   } 
   
-   void Start
+   public void Start()
    {
-      
+
    }
    
 }
