@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour
   Rigidbody rgb;
   private int _maxhealth = 100;
   private int _currentHealth;
-  private bool _isOnGround; 
+  public bool _isOnGround; 
   private Vector3 _move;
   private Vector3 _rotate; 
   private float _forcemove=1000;
