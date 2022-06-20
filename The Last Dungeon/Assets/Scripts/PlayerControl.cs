@@ -11,7 +11,11 @@ public class PlayerControl : MonoBehaviour
   Rigidbody rgb;
   private int _maxhealth = 100;
   private int _currentHealth;
+<<<<<<< Updated upstream
   public bool _isOnGround; 
+=======
+  private bool _isOnGround; 
+>>>>>>> Stashed changes
   private bool _canJump;
   private Vector3 _move;
   private Vector3 _rotate; 
@@ -36,17 +40,24 @@ public class PlayerControl : MonoBehaviour
       rgb = GetComponent<Rigidbody>();
    }
   
+<<<<<<< Updated upstream
     void Update()
     {   
              _move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+=======
+     void Update()
+    {
+            _move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+>>>>>>> Stashed changes
         if (dummyCam) 
-            _move = dummyCam.transform.TransformDirection(_move);
-       
-        _move = new Vector3(_move.x,0,_move.z);
+             _move = dummyCam.transform.TransformDirection(_move);
+        
+             _move = new Vector3(_move.x,0,_move.z);
         if (_move.magnitude > 0 && _isOnGround )
         {
             transform.forward = Vector3.Slerp(transform.forward,_move,Time.deltaTime*10);
         }
+<<<<<<< Updated upstream
         else if(_move.magnitude == 0)
         {
            
@@ -55,6 +66,12 @@ public class PlayerControl : MonoBehaviour
         {
             rgb.AddForce(0,800,0);
             Debug.Log("jump");
+=======
+       
+        if(_canJump && Input.GetKeyDown(KeyCode.Space))
+        {
+             rgb.AddForce(0,500,0);
+>>>>>>> Stashed changes
         }
     }
  void FixedUpdate()
@@ -96,9 +113,16 @@ public class PlayerControl : MonoBehaviour
    }
    void OnTriggerExit(Collider other)
    {
+<<<<<<< Updated upstream
        if(other.CompareTag("Ground"))
        {
           _isOnGround = false;
+=======
+        if(other.CompareTag("Ground"))
+       {
+          _isOnGround = false;
+          _canJump = false;
+>>>>>>> Stashed changes
        }
    }
 }
