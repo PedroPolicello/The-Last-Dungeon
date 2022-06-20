@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1161,7 +1161,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.004401631, y: 0.9701188, z: 0.017648885, w: -0.24194762}
+  m_LocalRotation: {x: 0.0044016317, y: 0.9701188, z: 0.017648889, w: -0.24194759}
   m_LocalPosition: {x: 1.0747805, y: 0.8789997, z: 1.8954202}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1626,7 +1626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 444496629}
   dummyCam: {fileID: 963194225}
-  _isOnGround: 0
   state: 6
 --- !u!54 &1782909655
 Rigidbody:
@@ -1827,7 +1826,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948424929}
-  m_LocalRotation: {x: 0.004401631, y: 0.9701188, z: 0.017648883, w: -0.24194764}
+  m_LocalRotation: {x: 0.0044016317, y: 0.9701188, z: 0.017648885, w: -0.24194759}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3013,6 +3012,7 @@ GameObject:
   - component: {fileID: 1782909655}
   - component: {fileID: 1782909656}
   - component: {fileID: 1782909654}
+  - component: {fileID: 7036213050769371010}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -3020,6 +3020,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &7036213050769371010
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7036213050769371009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ceb747baae65114ba8a3864263b5f52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &7090511826241060540
 Transform:
   m_ObjectHideFlags: 0
