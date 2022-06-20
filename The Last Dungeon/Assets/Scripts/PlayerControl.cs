@@ -38,6 +38,7 @@ public class PlayerControl : MonoBehaviour
    }
    void Update()
    {
+      _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
       if (dummyCam) 
          _move = dummyCam.transform.TransformDirection(_move);
         
