@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
   private int _maxhealth = 100;
   private int _currentHealth;
   public bool _isOnGround; 
+  private bool _canJump;
   private Vector3 _move;
   private Vector3 _rotate; 
   private float _forcemove=1000;
@@ -35,8 +36,8 @@ public class PlayerControl : MonoBehaviour
       rgb = GetComponent<Rigidbody>();
    }
   
-         void Update(){
-
+    void Update()
+    {   
              _move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         if (dummyCam) 
             _move = dummyCam.transform.TransformDirection(_move);
@@ -46,7 +47,16 @@ public class PlayerControl : MonoBehaviour
         {
             transform.forward = Vector3.Slerp(transform.forward,_move,Time.deltaTime*10);
         }
-         }
+        else if(_move.magnitude == 0)
+        {
+           
+        }
+        else if(_isOnGround && Input.GetKeyDown(KeyCode.Space))
+        {
+            rgb.AddForce(0,800,0);
+            Debug.Log("jump");
+        }
+    }
  void FixedUpdate()
     {
         float vel = rgb.velocity.magnitude;
@@ -81,6 +91,14 @@ public class PlayerControl : MonoBehaviour
        if(other.CompareTag("Ground"))
        {
           _isOnGround = true;
+          _canJump = true;
+       }
+   }
+   void OnTriggerExit(Collider other)
+   {
+       if(other.CompareTag("Ground"))
+       {
+          _isOnGround = false;
        }
    }
 }
