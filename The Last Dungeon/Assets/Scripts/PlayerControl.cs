@@ -34,9 +34,27 @@ public class PlayerControl : MonoBehaviour
       healthbar.SetMaxHealth(_maxhealth);
       rgb = GetComponent<Rigidbody>();
    }
-   public void Update()
-   {
-       switch (state)
+  
+         void Update(){
+
+             _move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        if (dummyCam) 
+            _move = dummyCam.transform.TransformDirection(_move);
+       
+        _move = new Vector3(_move.x,0,_move.z);
+        if (_move.magnitude > 0 && _isOnGround )
+        {
+            transform.forward = Vector3.Slerp(transform.forward,_move,Time.deltaTime*10);
+        }
+         }
+ void FixedUpdate()
+    {
+        float vel = rgb.velocity.magnitude;
+        rgb.AddForce((_move * _forcemove)/ (vel*2+1));
+        Vector3 velwoy = new Vector3(rgb.velocity.x, 0, rgb.velocity.z);
+        rgb.AddForce(-velwoy * _drag);
+
+        switch (state)
        {
            case States.Idle:
               Idle();
@@ -46,23 +64,7 @@ public class PlayerControl : MonoBehaviour
         {
           TakeDamage(20);
         }
-        _move = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        if (dummyCam) 
-            _move = dummyCam.transform.TransformDirection(_move);
-       
-        _move = new Vector3(_move.x,0,_move.z);
-        if (_move.magnitude > 0 && _isOnGround )
-        {
-            transform.forward = Vector3.Slerp(transform.forward,_move,Time.deltaTime*10);
-        }
-    }
-         
- void FixedUpdate()
-    {
-        float vel = rgb.velocity.magnitude;
-        rgb.AddForce((_move * _forcemove)/ (vel*2+1));
-        Vector3 velwoy = new Vector3(rgb.velocity.x, 0, rgb.velocity.z);
-        rgb.AddForce(-velwoy * _drag);
+        
     }
    
    void Idle()
