@@ -10,9 +10,10 @@ public class Boss : MonoBehaviour
     public CharacterController chtr;
     Vector3 move;
     float myrot;
-    public float Health;
+    public float health;
    // conta o tempo para os ataques
     private float _time;
+
     
     public enum States
     {
@@ -131,6 +132,17 @@ public class Boss : MonoBehaviour
     }
     void Damage()
     {
-
+      
+    }
+    void TakeDamage(int damage)
+    {
+       health -= damage;
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Sword"))
+        {
+               TakeDamage(20);
+        }
     }
 }

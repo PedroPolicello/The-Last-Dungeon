@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour
   private int _currentHealth;
   private float _time;
 
-  public bool _isOnGround; 
+  private bool _isOnGround; 
   private bool _canJump;
   private bool _isStuned;
 
