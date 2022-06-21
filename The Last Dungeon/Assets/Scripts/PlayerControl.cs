@@ -120,6 +120,10 @@ public class PlayerControl : MonoBehaviour
        {
            _isStuned = true;
        }
+       if(other.CompareTag("flecha"))
+       {
+          TakeDamage(20);
+       }
    }
    void OnTriggerExit(Collider other)
    {

@@ -7,7 +7,7 @@ public class AiRanged : MonoBehaviour
 {
     public CharacterController chtr;
     Vector3 move;
-    public static GameObject player;
+    public GameObject player;
     float myrot;
     public bool atacck;
     // --- vida do inimigo ---
@@ -79,6 +79,7 @@ public class AiRanged : MonoBehaviour
         if (other.CompareTag("Player"))
         {
            state = States.Attack;
+           Debug.Log("atirar");
         }
         
     }
@@ -104,7 +105,7 @@ public class AiRanged : MonoBehaviour
     {
 
         move = Vector3.forward * 1f;
-        Vector3 l1 = player.transform.position - transform.position;
+            Vector3 l1 = player.transform.position - transform.position;
         Vector3 dirwoy=new Vector3(l1.x,0,l1.z);
         transform.forward=dirwoy;
 
@@ -116,7 +117,7 @@ public class AiRanged : MonoBehaviour
             
 
 
-    if (Vector3.Distance(transform.position, player.transform.position) < 7)
+    if (Vector3.Distance(transform.position, player.transform.position) < 10)
         {
               state = States.Shot;
         }
@@ -130,7 +131,7 @@ public class AiRanged : MonoBehaviour
         myrot = Mathf.LerpAngle(myrot, Vector3.SignedAngle(transform.forward, l1, Vector3.up), Time.deltaTime * 10);
         transform.Rotate(new Vector3(0, myrot, 0));
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 7)
+        if (Vector3.Distance(transform.position, player.transform.position) < 10)
         {
            Flecha(Time.time);
         }

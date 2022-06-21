@@ -1116,6 +1116,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 2a339a6bc8f9c5242b60995affcce87a, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8879528566716807029, guid: 2a339a6bc8f9c5242b60995affcce87a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -53.7
@@ -1753,7 +1757,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077969123}
-  m_LocalRotation: {x: 7.061563e-16, y: 0.93642724, z: 1.8846837e-15, w: -0.35086197}
+  m_LocalRotation: {x: -7.1967424e-16, y: 0.93642724, z: -1.9207622e-15, w: -0.35086197}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1815,7 +1819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 270446119}
   dummyCam: {fileID: 969369387}
-  _isOnGround: 0
   state: 6
 --- !u!1001 &1734656707
 PrefabInstance:
@@ -1951,9 +1954,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3086587530057070672, guid: b0b21cb2416ae5540907607997bd173d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1116393778}
     - target: {fileID: 3122884346864545391, guid: b0b21cb2416ae5540907607997bd173d, type: 3}
       propertyPath: m_Name
       value: 'Areinha Idle com malha  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3122884346864545391, guid: b0b21cb2416ae5540907607997bd173d, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0b21cb2416ae5540907607997bd173d, type: 3}

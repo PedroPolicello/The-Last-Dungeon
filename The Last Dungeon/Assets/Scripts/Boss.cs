@@ -31,7 +31,7 @@ public class Boss : MonoBehaviour
             chtr = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
-        Health = 1000;
+        health = 1000;
 
     }
     private void Update()
@@ -57,7 +57,7 @@ public class Boss : MonoBehaviour
                 Idle();
                 break;
         }
-        if(Health == 0)
+        if(health == 0)
         {
             state = States.Death;
         }
