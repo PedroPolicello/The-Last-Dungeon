@@ -11,9 +11,12 @@ public class PlayerControl : MonoBehaviour
   Rigidbody rgb;
   private int _maxhealth = 100;
   private int _currentHealth;
+  private float _time;
 
-  private bool _isOnGround; 
+  public bool _isOnGround; 
   private bool _canJump;
+  private bool _isStuned;
+
   private Vector3 _move;
   private Vector3 _rotate; 
   private float _forcemove=1000;
@@ -27,7 +30,8 @@ public class PlayerControl : MonoBehaviour
      Damage,
      Magic,
      Dead,
-     Idle
+     Idle,
+     Stuned
   } 
    public States state = States.Idle;
    public void Start()
@@ -38,7 +42,10 @@ public class PlayerControl : MonoBehaviour
    }
    void Update()
    {
-      _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
+       if(_isOnGround)
+       {
+          _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
+       }
       if (dummyCam) 
          _move = dummyCam.transform.TransformDirection(_move);
         
@@ -55,6 +62,7 @@ public class PlayerControl : MonoBehaviour
       {
          rgb.AddForce(0,500,0);
       }
+
    }
  void FixedUpdate()
     {
@@ -68,16 +76,33 @@ public class PlayerControl : MonoBehaviour
            case States.Idle:
               Idle();
               break;
+           case States.Stuned:
+              Stuned();
+              break;
        }
        if(Input.GetKeyDown(KeyCode.E))
         {
           TakeDamage(20);
         }
+        if(_isStuned)
+        {
+           DoTimer();
+           state = States.Stuned;
+        }
+        else if(!_isStuned)
+        {
+           _isOnGround = true;
+        }
+        
     }
    
    void Idle()
    {
 
+   }
+   void Stuned()
+   {
+     _isOnGround = false;
    }
    void TakeDamage(int damage)
    {
@@ -91,6 +116,10 @@ public class PlayerControl : MonoBehaviour
           _isOnGround = true;
           _canJump = true;
        }
+       else if(other.CompareTag("Stun"))
+       {
+           _isStuned = true;
+       }
    }
    void OnTriggerExit(Collider other)
    {
@@ -99,5 +128,16 @@ public class PlayerControl : MonoBehaviour
           _isOnGround = false;
           _canJump = false;
        }
+       
    }
+    private void DoTimer(float timeStuned = 10f)
+    {
+        _time += Time.deltaTime;
+        if(_time >= timeStuned)
+        {
+           Debug.Log("deu Tempo");
+           _time = 0;
+           _isStuned = false;
+        }
+    }
 }
