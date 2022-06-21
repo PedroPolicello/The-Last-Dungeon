@@ -78,6 +78,10 @@ public class Boss : MonoBehaviour
         {
             state = States.Walk;
         }
+         if(other.CompareTag("Sword"))
+        {
+               TakeDamage(20);
+        }
 
     }
     public void OnTriggerExit(Collider other)
@@ -138,11 +142,5 @@ public class Boss : MonoBehaviour
     {
        health -= damage;
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Sword"))
-        {
-               TakeDamage(20);
-        }
-    }
+   
 }
