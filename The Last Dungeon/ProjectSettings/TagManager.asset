@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Stun
+  - flecha
   layers:
   - Default
   - TransparentFX
