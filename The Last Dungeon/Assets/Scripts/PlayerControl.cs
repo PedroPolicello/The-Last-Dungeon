@@ -80,6 +80,7 @@ public class PlayerControl : MonoBehaviour
               Stuned();
               break;
        }
+       
        if(Input.GetKeyDown(KeyCode.E))
         {
           TakeDamage(20);
