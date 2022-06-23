@@ -172,22 +172,6 @@ ModelImporter:
         length: 0
         modified: 0
     - boneName: Braco_L
-      humanName: LeftShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Braco_R
-      humanName: RightShoulder
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Antebraco_L
       humanName: LeftUpperArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -196,14 +180,6 @@ ModelImporter:
         length: 0
         modified: 0
     - boneName: Antebraco_R
-      humanName: RightUpperArm
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Mao_R
       humanName: RightLowerArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -219,7 +195,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Mao_L_end
+    - boneName: Mao_L
       humanName: LeftHand
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -227,7 +203,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Mao_R_end
+    - boneName: Mao_R
       humanName: RightHand
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -235,7 +211,7 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Mao_L
+    - boneName: Antebraco_L
       humanName: LeftLowerArm
       limit:
         min: {x: 0, y: 0, z: 0}
@@ -253,6 +229,14 @@ ModelImporter:
         modified: 0
     - boneName: Pe_L_end
       humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Braco_R
+      humanName: RightUpperArm
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -313,7 +297,7 @@ ModelImporter:
     - name: CTRL_perna_R
       parentName: Armature
       position: {x: 0.0056016855, y: 0.005431571, z: 0.0007044746}
-      rotation: {x: -0.496171, y: -0.50379986, z: 0.50379986, w: 0.496171}
+      rotation: {x: -0.49617103, y: -0.5037999, z: 0.5037999, w: 0.49617103}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
     - name: CTRL_perna_R_end
       parentName: CTRL_perna_R
@@ -337,7 +321,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Pelvis
       parentName: Root
-      position: {x: -1.099815e-18, y: 0.0009190589, z: -0.08920729}
+      position: {x: -1.099815e-18, y: 0.0009190589, z: -0.086272866}
       rotation: {x: -0.69661754, y: 1.1134297e-18, z: 1.1134297e-18, w: 0.7174427}
       scale: {x: 1, y: 1, z: 1}
     - name: Coxa_L
@@ -358,7 +342,7 @@ ModelImporter:
     - name: Pe_L
       parentName: Tornozelo_L
       position: {x: -1.4901161e-10, y: 0.007817928, z: -3.306195e-10}
-      rotation: {x: -0.12937069, y: -0.7041478, z: -0.1421797, w: 0.68353796}
+      rotation: {x: -0.12937067, y: -0.70414776, z: -0.14217968, w: 0.6835379}
       scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
     - name: Pe_L_end
       parentName: Pe_L
@@ -383,7 +367,7 @@ ModelImporter:
     - name: Pe_R
       parentName: Tornozelo_R
       position: {x: -2.6077032e-10, y: 0.007817923, z: 3.7252902e-11}
-      rotation: {x: -0.12910746, y: 0.7040388, z: 0.14223616, w: 0.6836881}
+      rotation: {x: -0.12910748, y: 0.70403886, z: 0.14223617, w: 0.68368816}
       scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
     - name: Pe_R_end
       parentName: Pe_R
@@ -428,12 +412,12 @@ ModelImporter:
     - name: Braco_L
       parentName: Torso_3
       position: {x: -0.0057823104, y: 0.00252538, z: -0.0007135276}
-      rotation: {x: -0.028844653, y: 0.0022126392, z: 0.7404447, w: 0.6714944}
+      rotation: {x: -0.024861868, y: 0.0062927343, z: 0.7325182, w: 0.6802643}
       scale: {x: 1.0000002, y: 1.0000002, z: 0.9999997}
     - name: Antebraco_L
       parentName: Braco_L
       position: {x: 0.00000000115484, y: 0.012663758, z: 1.8626451e-11}
-      rotation: {x: 0.02995327, y: -0.0021730468, z: -0.08242464, w: 0.9961447}
+      rotation: {x: 0.028467048, y: -0.0022305886, z: -0.07645656, w: 0.996664}
       scale: {x: 1, y: 1.0000001, z: 1.0000002}
     - name: Mao_L
       parentName: Antebraco_L
