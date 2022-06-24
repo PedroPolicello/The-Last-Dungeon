@@ -8,12 +8,15 @@ public class PlayerControl : MonoBehaviour
   public HealthControl healthbar;
   public GameObject dummyCam;
 
+  Animator anim;
+
   Rigidbody rgb;
   private int _maxhealth = 100;
   private int _currentHealth;
   private float _time;
+  private float _jumpForce;
 
-  private bool _isOnGround; 
+  public bool _isOnGround; 
   private bool _canJump;
   private bool _isStuned;
 
@@ -31,7 +34,8 @@ public class PlayerControl : MonoBehaviour
      Magic,
      Dead,
      Idle,
-     Stuned
+     Stuned,
+     Walk
   } 
    public States state = States.Idle;
    public void Start()
@@ -39,29 +43,38 @@ public class PlayerControl : MonoBehaviour
       _currentHealth = _maxhealth;
       healthbar.SetMaxHealth(_maxhealth);
       rgb = GetComponent<Rigidbody>();
+      anim = GetComponent<Animator>();
    }
    void Update()
    {
+      if(_isOnGround && !_isStuned)
+      {
+         _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
+      }
+      else 
+      {
+         _move = Vector3.zero;
+      }
+        if (dummyCam) 
+        {
+            _move = dummyCam.transform.TransformDirection(_move);
+        }
+         _move = new Vector3(_move.x,0,_move.z); 
+           if (_move.magnitude > 0 && _isOnGround)
+        {
+           transform.forward = Vector3.Slerp(transform.forward,_move,Time.deltaTime*10);
+        }
        if(_isOnGround)
        {
-          _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
+          state = States.Idle;
+          anim.SetFloat("jump" , 0);
        }
-      if (dummyCam) 
-         _move = dummyCam.transform.TransformDirection(_move);
-        
-         _move = new Vector3(_move.x,0,_move.z);
-      if (_move.magnitude > 0 && _isOnGround )
-        {
-         transform.forward = Vector3.Slerp(transform.forward,_move,Time.deltaTime*10);
-        }
-      else if(_move.magnitude == 0)
-      {
-           
-      }
       if(_canJump && Input.GetKeyDown(KeyCode.Space))
       {
-         rgb.AddForce(0,500,0);
+         rgb.AddForce(0,2500,0);
+         anim.SetFloat("jump" , 1);
       }
+      
 
    }
  void FixedUpdate()
@@ -70,6 +83,7 @@ public class PlayerControl : MonoBehaviour
         rgb.AddForce((_move * _forcemove)/ (vel*2+1));
         Vector3 velwoy = new Vector3(rgb.velocity.x, 0, rgb.velocity.z);
         rgb.AddForce(-velwoy * _drag);
+      anim.SetFloat("velocity", vel);
 
         switch (state)
        {
@@ -79,6 +93,9 @@ public class PlayerControl : MonoBehaviour
            case States.Stuned:
               Stuned();
               break;
+           case States.Walk:
+              Walk();
+              break;
        }
        
        if(Input.GetKeyDown(KeyCode.E))
@@ -87,24 +104,48 @@ public class PlayerControl : MonoBehaviour
         }
         if(_isStuned)
         {
-           DoTimer();
            state = States.Stuned;
+           DoTimer();
         }
-        else if(!_isStuned)
-        {
-           _isOnGround = true;
-        }
+       // else if(!_isStuned)
+       // {
+       //    _isOnGround = true;
+       // }
         
     }
    
    void Idle()
    {
-
+      
+      
+       if (_move.magnitude > 0)
+        {
+           state = States.Walk;
+          
+        }
    }
+
    void Stuned()
    {
-     _isOnGround = false;
+     if(_isStuned == false)
+     {
+        state = States.Idle;
+     }
    }
+
+   void Walk()
+   {
+      if(_isOnGround)
+      {
+         _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
+      }
+         if(_move.magnitude < 0)
+        {
+           state = States.Idle;
+        }
+       
+   }
+
    void TakeDamage(int damage)
    {
     _currentHealth -= damage; 

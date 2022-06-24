@@ -16,10 +16,7 @@ public class AiRanged : MonoBehaviour
     public GameObject spawnFlecha;
     public GameObject flecha;
     public Vector3 pointshot;
-    public bool atirando = true;
-    public float x;
-    public float y;
-    public float z;
+    public bool atirando;
     float delay =0;
     
     public enum States
@@ -117,7 +114,7 @@ public class AiRanged : MonoBehaviour
             
 
 
-    if (Vector3.Distance(transform.position, player.transform.position) < 10)
+    if (Vector3.Distance(transform.position, player.transform.position) < 3)
         {
               state = States.Shot;
         }
@@ -131,15 +128,19 @@ public class AiRanged : MonoBehaviour
         myrot = Mathf.LerpAngle(myrot, Vector3.SignedAngle(transform.forward, l1, Vector3.up), Time.deltaTime * 10);
         transform.Rotate(new Vector3(0, myrot, 0));
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 10)
+        if (Vector3.Distance(transform.position, player.transform.position) < 3)
         {
            Flecha(Time.time);
+        }
+        else 
+        {
+            state = States.Attack;
         }
 
     }
 
     void Flecha(float tempo){
-            if(tempo>delay+0.7f){
+            if(tempo>delay+1.5f){
 
             
             pointshot = spawnFlecha.transform.position;
