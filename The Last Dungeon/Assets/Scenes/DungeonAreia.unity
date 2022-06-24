@@ -756,7 +756,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177418159}
-  m_LocalRotation: {x: -0.015973778, y: 0.47823784, z: 0.008700342, w: 0.87804204}
+  m_LocalRotation: {x: -0.01597377, y: 0.4782385, z: 0.008700353, w: 0.8780416}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -891,7 +891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245208601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.690206, y: 1.1566396, z: 38.87627}
+  m_LocalPosition: {x: -2.6902132, y: 1.1566396, z: 38.87628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1077969125}
@@ -4013,8 +4013,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969369387}
-  m_LocalRotation: {x: -0.015973782, y: 0.47823784, z: 0.008700342, w: 0.878042}
-  m_LocalPosition: {x: -2.690206, y: 1.1566396, z: 38.87627}
+  m_LocalRotation: {x: -0.015973773, y: 0.47823852, z: 0.008700356, w: 0.8780416}
+  m_LocalPosition: {x: -2.6902132, y: 1.1566396, z: 38.87628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 34894375}
@@ -4292,7 +4292,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075707790}
-  m_LocalRotation: {x: -0.031900108, y: 0.47800127, z: 0.017374836, w: 0.8776077}
+  m_LocalRotation: {x: -0.031900093, y: 0.47800192, z: 0.017374862, w: 0.87760735}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4366,7 +4366,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077969123}
-  m_LocalRotation: {x: 9.006512e-16, y: 0.47831693, z: -4.905522e-16, w: 0.8781873}
+  m_LocalRotation: {x: -0, y: 0.47831765, z: -0, w: 0.87818694}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4744,6 +4744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 270446119}
   dummyCam: {fileID: 969369387}
+  _isOnGround: 0
   state: 6
 --- !u!1001 &1122700779
 PrefabInstance:
