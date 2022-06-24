@@ -114,7 +114,7 @@ public class AiRanged : MonoBehaviour
             
 
 
-    if (Vector3.Distance(transform.position, player.transform.position) < 3)
+    if (Vector3.Distance(transform.position, player.transform.position) < 7)
         {
               state = States.Shot;
         }
@@ -128,7 +128,7 @@ public class AiRanged : MonoBehaviour
         myrot = Mathf.LerpAngle(myrot, Vector3.SignedAngle(transform.forward, l1, Vector3.up), Time.deltaTime * 10);
         transform.Rotate(new Vector3(0, myrot, 0));
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 3)
+        if (Vector3.Distance(transform.position, player.transform.position) < 7)
         {
            Flecha(Time.time);
         }
