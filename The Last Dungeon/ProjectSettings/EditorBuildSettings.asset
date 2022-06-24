@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 8d7724a83f7d845499054a65b0157aec
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/DungeonAreia.unity
+    guid: f3f6b62d0999be84587c6c9178d4ce6c
+  - enabled: 1
+    path: Assets/Scenes/DungeonCaverna.unity
+    guid: 7440e50ec9dcee640b84a306969e1461
+  - enabled: 1
+    path: Assets/Scenes/DungeonFloresta.unity
+    guid: b11185aaa03fcbf428099e2c2b3b60e0
+  - enabled: 1
+    path: Assets/Scenes/DungeonGelo.unity
+    guid: 5d88393973974f544815d4e3789729b1
   m_configObjects: {}
