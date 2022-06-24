@@ -432,12 +432,12 @@ ModelImporter:
     - name: Braco_R
       parentName: Torso_3
       position: {x: 0.005988202, y: 0.0030012303, z: -0.0007142677}
-      rotation: {x: -0.030918168, y: -0.0029124033, z: -0.75081044, w: 0.6597873}
+      rotation: {x: -0.025310688, y: -0.008569329, z: -0.7335366, w: 0.6791246}
       scale: {x: 0.99999976, y: 0.99999994, z: 0.9999998}
     - name: Antebraco_R
       parentName: Braco_R
       position: {x: -0.0000000032078242, y: 0.0121117635, z: -7.4505804e-11}
-      rotation: {x: 0.03035322, y: 0.003015438, z: 0.09015269, w: 0.99546075}
+      rotation: {x: 0.025813695, y: 0.0030139578, z: 0.07684173, w: 0.9967046}
       scale: {x: 1, y: 0.9999998, z: 0.99999994}
     - name: Mao_R
       parentName: Antebraco_R
