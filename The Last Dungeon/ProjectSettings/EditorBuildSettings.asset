@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonGelo.unity
     guid: 5d88393973974f544815d4e3789729b1
+  - enabled: 1
+    path: Assets/Scenes/YouDied.unity
+    guid: 070d3f289fdcf3343ba1a60d94799747
   m_configObjects: {}

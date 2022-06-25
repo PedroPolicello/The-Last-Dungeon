@@ -6,9 +6,9 @@ public class MenuControl : MonoBehaviour
 {
     public string sceneToLoad;
 
-    public void SceneIntro()
+    public void StartGame()
     {
-        SceneManager.LoadScene(sceneToLoad);
+        SceneManager.LoadScene("Lobby");
     }
     public void Exit()
     {
