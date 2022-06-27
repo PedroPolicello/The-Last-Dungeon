@@ -140,7 +140,7 @@ public class AiRanged : MonoBehaviour
     }
 
     void Flecha(float tempo){
-            if(tempo>delay+1.5f){
+            if(tempo>delay+2f){
 
             
             pointshot = spawnFlecha.transform.position;

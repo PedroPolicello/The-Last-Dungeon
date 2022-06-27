@@ -167,9 +167,6 @@ MonoBehaviour:
   flecha: {fileID: 7638889626999086810, guid: 0489ae7ce80304e44ba7c9c5a69bf606, type: 3}
   pointshot: {x: 0, y: 0, z: 0}
   atirando: 1
-  x: 0
-  y: 0
-  z: 0
   state: 0
 --- !u!143 &621557092631104057
 CharacterController:
@@ -200,7 +197,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 30
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3401290494199696570
 GameObject:
