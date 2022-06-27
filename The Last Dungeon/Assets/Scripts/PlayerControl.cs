@@ -51,7 +51,7 @@ public class PlayerControl : MonoBehaviour
       {
          _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
       }
-      else 
+      else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)) 
       {
          _move = Vector3.zero;
       }
