@@ -17,7 +17,7 @@ public class LOADSCENE : MonoBehaviour
             {
                 SpawnPlayer.changeScene = true;
                 SceneManager.LoadScene("DungeonAreia");
-                SpawnPlayer.spawnLocal = new Vector3(-436.8f, 7.95f, 572.52f);
+                SpawnPlayer.spawnLocal = new Vector3(4.64f, 0f, 47.7f);
             }
             else if (sceneToLoad == "DungeonCaverna")
             {
