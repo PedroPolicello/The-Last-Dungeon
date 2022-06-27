@@ -11,8 +11,8 @@ public class SpawnPlayer : MonoBehaviour
     {
         if(changeScene == true)
         {
-           // GameObject player = FindObjectOfType<TrdControl>().gameObject;
-           // player.transform.position = spawnLocal;
+           GameObject player = FindObjectOfType<PlayerControl>().gameObject;
+            player.transform.position = spawnLocal;
         }
        
     }
