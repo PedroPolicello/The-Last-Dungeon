@@ -51,9 +51,9 @@ public class PlayerControl : MonoBehaviour
       {
          _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
       }
-      else if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)) 
+      if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)) 
       {
-         _move = Vector3.zero;
+        rgb.constraints = RigidbodyConstraints.FreezeRotation;
       }
         if (dummyCam) 
         {
@@ -80,7 +80,7 @@ public class PlayerControl : MonoBehaviour
  void FixedUpdate()
     {
         float vel = rgb.velocity.magnitude;
-        rgb.AddForce((_move * _forcemove)/ (vel*2+1));
+        rgb.AddForce((_move * _forcemove)/ (vel*0.5f+2));
         Vector3 velwoy = new Vector3(rgb.velocity.x, 0, rgb.velocity.z);
         rgb.AddForce(-velwoy * _drag);
       anim.SetFloat("velocity", vel);
