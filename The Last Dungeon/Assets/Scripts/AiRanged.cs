@@ -7,7 +7,7 @@ public class AiRanged : MonoBehaviour
 {
     public CharacterController chtr;
     Vector3 move;
-    public GameObject player;
+    public static GameObject player;
     float myrot;
     public bool atacck;
     // --- vida do inimigo ---

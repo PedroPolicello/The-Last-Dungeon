@@ -27,7 +27,7 @@ public class ONLOAD : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
        
-       // AiRanged.player = PLP;
+        AiRanged.player = PLP;
         ItemPickUp.shieldSlot = shieldSlot;
         ItemPickUp.staffSlot = staffSlot;
         ItemPickUp.swordSlot = swordSlot;
