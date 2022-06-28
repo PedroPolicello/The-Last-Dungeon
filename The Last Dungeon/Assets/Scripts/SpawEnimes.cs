@@ -9,7 +9,7 @@ public class SpawEnimes : MonoBehaviour
     public static bool live;
     public static float control = 0;
     public GameObject Pota;
-    private bool _open;
+    public static bool _open;
     // ------ Local de Spawn dos arqueiros -------
     public GameObject Spawn1, Spawn2, Spawn3, Spawn4;
    
@@ -27,11 +27,16 @@ public class SpawEnimes : MonoBehaviour
             wall1.SetActive(true);
             wall2.SetActive(true);
             Debug.Log("abriu");
+             for(int i = 0; i > 2; i++)
+            {
+                Spawn();
+                Debug.Log(i);
+            }
         }
 
-        if (control >= 5)
+        if (control > 0)
         {
-            control = 0;
+            //control = 0;
             Debug.Log(control);
             wall1.SetActive(false);
             wall2.SetActive(false);
@@ -44,13 +49,5 @@ public class SpawEnimes : MonoBehaviour
             GameObject inimigo3 = Instantiate(Enemy1, Spawn3.transform.position,  Quaternion.Euler(0,0,0));
             GameObject inimigo4 = Instantiate(Enemy1, Spawn4.transform.position,  Quaternion.Euler(0,0,0));
             live = false;
-    }
-    void OnTriggerEnter(Collider other)
-    {
-      if(other.CompareTag("Player"))
-      {
-            Spawn();
-            _open = true;
-        }
     }
 }

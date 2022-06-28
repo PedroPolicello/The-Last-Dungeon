@@ -91,6 +91,7 @@ public class ItemPickUp : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             buttonPickUp.SetActive(false);
+
         }
     }
 }

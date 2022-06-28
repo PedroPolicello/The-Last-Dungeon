@@ -74,6 +74,10 @@ public class PlayerControl : MonoBehaviour
          rgb.AddForce(0,2500,0);
          anim.SetFloat("jump" , 1);
       }
+      if(Input.GetKeyDown(KeyCode.O))
+      {
+         AiRanged.life = 0;
+      }
 
    }
  void FixedUpdate()
@@ -179,6 +183,10 @@ public class PlayerControl : MonoBehaviour
        if(other.CompareTag("flecha"))
        {
           TakeDamage(20);
+       }
+       if(other.CompareTag("Porta"))
+       {
+         SpawEnimes._open = true;
        }
    }
    void OnTriggerExit(Collider other)
