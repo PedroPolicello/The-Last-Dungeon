@@ -17,7 +17,8 @@ public class ItemEquip : MonoBehaviour
     public static bool bowOn;
     public static bool swordOn;
 
-    private int _shield;
+    public static bool shieldEquip;
+    public static bool swordEquip;
 
     void Update()
     {
@@ -35,7 +36,8 @@ public class ItemEquip : MonoBehaviour
             //Myshield.transform.parent = Myancora.transform;
             Myshield.transform.localPosition = Vector3.zero;
             Myshield.transform.localRotation = Quaternion.identity;
-            
+            shieldEquip = true;
+            swordEquip = false;
 
         }
         else if(Input.GetKeyDown(KeyCode.Alpha1) && swordOn)
@@ -49,7 +51,8 @@ public class ItemEquip : MonoBehaviour
           GameObject Myancora = GameObject.Find("Ancora2");
           GameObject Mysword = Instantiate(sword, Myancora.transform);
           Mysword.transform.localPosition = Vector3.zero;
-          
+          swordEquip = true;
+          shieldEquip = false;
           
         }
         else if(Input.GetKeyDown(KeyCode.Alpha4) && staffOn)

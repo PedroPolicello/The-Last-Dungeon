@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
   private int _currentHealth;
   private float _time;
   private float _jumpForce;
+  private int _isDefending;
 
   public bool _isOnGround; 
   private bool _canJump;
@@ -34,7 +35,8 @@ public class PlayerControl : MonoBehaviour
      Dead,
      Idle,
      Stuned,
-     Walk
+     Walk,
+     Defend
   } 
    public States state = States.Idle;
    public void Start()
@@ -66,7 +68,6 @@ public class PlayerControl : MonoBehaviour
         }
        if(_isOnGround)
        {
-          state = States.Idle;
           anim.SetFloat("jump" , 0);
        }
       if(_canJump && Input.GetKeyDown(KeyCode.Space))
@@ -102,6 +103,9 @@ public class PlayerControl : MonoBehaviour
            case States.Attack:
                Attack();
                break;
+           case States.Defend:
+               Defend();
+               break;
        }
        
        if(Input.GetKeyDown(KeyCode.E))
@@ -113,34 +117,53 @@ public class PlayerControl : MonoBehaviour
            state = States.Stuned;
            DoTimer();
         }
-        if(Input.GetKeyDown(KeyCode.Q)) 
+        if(Input.GetKeyDown(KeyCode.Q) && ItemEquip.swordEquip) 
        {
           state = States.Attack;
+       }
+        if(Input.GetKeyDown(KeyCode.Q) && ItemEquip.shieldEquip)
+       {
+          _isDefending +=1;
+          Debug.Log(_isDefending);
+       }
+       if(Input.GetKeyDown(KeyCode.Q) && ItemEquip.shieldEquip && _isDefending == 1)
+       {
+          state = States.Defend;
          
        }
-        if(Input.GetKeyUp(KeyCode.Q)) 
-       {
-          state = States.Attack;
-          _isOnGround = true;
-       }
+       if(_isDefending >= 2)
+          {
+             _isDefending = 0;
+          }
     }
    
    void Idle()
    {
       
-      
+      _isOnGround = true;
        if (_move.magnitude != 0)
         {
            state = States.Walk;
-          
         }
    }
-
+   void Defend()
+   {   _isDefending +=1;
+      anim.SetBool("isBlocking", true);
+      rgb.constraints = RigidbodyConstraints.FreezeRotation;
+      rgb.velocity = new Vector3 (0,0,0);
+      if(Input.GetKeyDown(KeyCode.Q))
+      {
+         state = States.Walk;
+         anim.SetBool("isBlocking", false);
+         
+      }
+   }
    void Attack()
    {
      
       anim.SetTrigger("Attack");
       _isOnGround = false;
+      state = States.Idle;
    }
    void Stuned()
    {
