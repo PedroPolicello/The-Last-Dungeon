@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuControl : MonoBehaviour
 {
-    public string sceneToLoad;
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Lobby");
+        SceneManager.LoadScene("CutSceneInicial");
     }
     public void Exit()
     {

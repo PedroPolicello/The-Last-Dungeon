@@ -14,7 +14,7 @@ public class SceneExit : MonoBehaviour
             if (sceneToLoad == "MainGame")
             {
                 SceneManager.LoadScene("MainGame");
-                SpawnPlayer.spawnLocal = new Vector3(-429.6645f, 6.34f, 567.4065f);
+                SpawnPlayer.spawnLocal = new Vector3(-0.78f, -1.07f, 30f);
             }
         }
     }
