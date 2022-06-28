@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -223,8 +223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 42}
-  m_SizeDelta: {x: 988.8571, y: 144.1313}
+  m_AnchoredPosition: {x: -0, y: -56}
+  m_SizeDelta: {x: 794.75, y: 733.2161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612053945
 MonoBehaviour:
@@ -247,7 +247,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 786feb4183ae9214694ae1845198dc80, type: 3}
+    m_Font: {fileID: 12800000, guid: 7bdc038382b0ca849932a756298f4aad, type: 3}
     m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
@@ -256,18 +256,18 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 2
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.5
   m_Text: "    Mas eu n\xE3o imaginaria que na pen\xFAltima masmorra eu perderia
-    todos que estavam ali em um desabamento, ocorreu tudo muito r\xE1pido \ne n\xE3o
+    todos que estavam ali em um desabamento, ocorreu tudo muito r\xE1pido e n\xE3o
     pude fazer nada, com muito suor e dedica\xE7\xE3o consegui sair vivo e escolhi
     completar a miss\xE3o sozinho, eu n\xE3o aceitaria voltar para o vilarejo sem
     completar a miss\xE3o.\r\n    Foi uma longa caminhada at\xE9 chegar na \xFAltima
     masmorra, mas logo quando cheguei percebi de cara que ela era diferente, era
     maior que as anteriores e tinha algo de estranho.\r\n    Eu estava muito cansado
     quando sai da pen\xFAltima masmorra, ent\xE3o n\xE3o consegui trazer muito armamento,
-    \nconsegui pegar apenas uma espada, vamos ver o que eu consigo fazer...\r\n"
+    consegui pegar apenas uma espada, vamos ver o que eu consigo fazer...\r\n"
 --- !u!222 &612053946
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -410,8 +410,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 42}
-  m_SizeDelta: {x: 988.8571, y: 144.1313}
+  m_AnchoredPosition: {x: 13, y: -80}
+  m_SizeDelta: {x: 845.17, y: 671.2572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716001542
 MonoBehaviour:
@@ -434,7 +434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 786feb4183ae9214694ae1845198dc80, type: 3}
+    m_Font: {fileID: 12800000, guid: 7bdc038382b0ca849932a756298f4aad, type: 3}
     m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
@@ -443,17 +443,17 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 2
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.5
   m_Text: "   Foram nesses treinamentos que eu acabei me destacando dos outros guerreiros,
-    \neu era o mais forte e conseguia ter uma tomada de decis\xF5es melhor que qualquer
-    outro, logo me tornei o l\xEDder militar do pa\xEDs \ne embarquei em uma jornada
+    eu era o mais forte e conseguia ter uma tomada de decis\xF5es melhor que qualquer
+    outro, logo me tornei o l\xEDder militar do pa\xEDs e embarquei em uma jornada
     com os meus melhores guerreiros para acabarmos de uma vez por todas com os monstros.
-    \r\n    Estava tudo indo de acordo com o plano at\xE9 que entramos na pen\xFAltima
+    \r\nEstava tudo indo de acordo com o plano at\xE9 que entramos na pen\xFAltima
     masmorra, infelizmente eu j\xE1 havia perdido alguns guerreiros nas masmorras
-    anteriores, \npor\xE9m todos sabiam que seria uma miss\xE3o suicida, e que no
-    fim seus sacrif\xEDcios valeriam a pena. "
+    anteriores, por\xE9m todos sabiam que seria uma miss\xE3o suicida, e que no fim
+    seus sacrif\xEDcios valeriam a pena. "
 --- !u!222 &716001543
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -680,8 +680,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 42}
-  m_SizeDelta: {x: 988.8571, y: 144.1313}
+  m_AnchoredPosition: {x: 6, y: -22}
+  m_SizeDelta: {x: 902.9214, y: 613.4727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1844982440
 MonoBehaviour:
@@ -704,7 +704,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 786feb4183ae9214694ae1845198dc80, type: 3}
+    m_Font: {fileID: 12800000, guid: 7bdc038382b0ca849932a756298f4aad, type: 3}
     m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
@@ -713,16 +713,16 @@ MonoBehaviour:
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 2
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1.5
   m_Text: "    Anos atr\xE1s foi conquistada a paz no mundo com um acordo entre homens
-    e monstros, o acordo dizia que os homens forneceriam alimentos, \ne em troca
-    os monstros n\xE3o atacariam os homens, por\xE9m no dia 7 de agosto de 1753 uma
-    das casas do nosso vilarejo foi atacada por um grupo de monstros, \neles apareceram
+    e monstros, o acordo dizia que os homens forneceriam alimentos, e em troca os
+    monstros n\xE3o atacariam os homens, por\xE9m no dia 7 de agosto de 1753 uma
+    das casas do nosso vilarejo foi atacada por um grupo de monstros, eles apareceram
     como um raio e sumiram na neblina. \r\n    Como est\xE1vamos em paz, n\xE3o existiam
     mais guerreiros nos vilarejos e n\xE3o conseguimos nos defender do ataque, mas
-    ap\xF3s isso, \no l\xEDder do pa\xEDs decidiu voltar com os acampamentos de treinamento
+    ap\xF3s isso, o l\xEDder do pa\xEDs decidiu voltar com os acampamentos de treinamento
     e formar novos guerreiros para combater os monstros."
 --- !u!222 &1844982441
 CanvasRenderer:
@@ -769,7 +769,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.24997, y: 0}
+  m_AnchoredPosition: {x: 0.25, y: 0}
   m_SizeDelta: {x: -0.50006, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925744654
