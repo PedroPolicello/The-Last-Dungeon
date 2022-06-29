@@ -10,6 +10,7 @@ TagManager:
   - Sword
   - Shield
   - Porta
+  - swordAttack
   layers:
   - Default
   - TransparentFX

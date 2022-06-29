@@ -45,6 +45,7 @@ public class ONLOAD : MonoBehaviour
         ItemPickUp.buttonPickUp = buttonPickUp;
 
         Boss.player = PLP;
+        BossTroll.player = PLP;
        
     }
 }

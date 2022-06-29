@@ -8,6 +8,7 @@ public class MenuControl : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("CutSceneInicial");
+        ONLOAD._playerIsDead = false;
     }
     public void Exit()
     {
