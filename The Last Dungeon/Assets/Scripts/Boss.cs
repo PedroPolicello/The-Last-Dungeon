@@ -19,7 +19,7 @@ public class Boss : MonoBehaviour
     {
         Walk,
         Attack,
-        RockAttack,
+       
         Death,
         TakeDamage,
         Idle
@@ -31,8 +31,6 @@ public class Boss : MonoBehaviour
             chtr = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         anim = GetComponent<Animator>();
-        health = 1000;
-
     }
     private void Update()
     {
@@ -43,9 +41,6 @@ public class Boss : MonoBehaviour
                 break;
             case States.Attack:
                 Attack();
-                break;
-            case States.RockAttack:
-                RockAtacck();
                 break;
             case States.Death:
                 Death();
@@ -61,7 +56,11 @@ public class Boss : MonoBehaviour
         {
             state = States.Death;
         }
-        
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            health -= 50;
+            Debug.Log(health);
+        }
     }
    /* private void DoTimer(float countTime = 20f)
     {
@@ -93,11 +92,11 @@ public class Boss : MonoBehaviour
     }
     void Idle()
     {
-        anim.SetBool("MOVING", false);
+        anim.SetBool("isWalking", false);
     }
     void Walk()
     {
-        anim.SetBool("MOVING", true);
+        anim.SetBool("isWalking", true);
         move = Vector3.forward * 1f;
         Vector3 l1 = player.transform.position - transform.position;
         Vector3 dirwoy=new Vector3(l1.x,0,l1.z);
@@ -108,7 +107,7 @@ public class Boss : MonoBehaviour
         chtr.SimpleMove(globalmove * 1);
       
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 3)
+        if (Vector3.Distance(transform.position, player.transform.position) < 10)
         {
             state = States.Attack;
         }
@@ -116,23 +115,24 @@ public class Boss : MonoBehaviour
     }
     void Attack()
     {
-        anim.SetBool("ATACCK", true);
-        anim.SetBool("MOVING", false);
-        if (Vector3.Distance(transform.position, player.transform.position) > 4)
+        anim.SetBool("isWalking", false);
+        if(health > 50)
+        {
+            anim.SetTrigger("FrontAttack");
+        }
+        else if(health <=50)
+        {
+            anim.SetTrigger("SideAttack");
+        }
+        if (Vector3.Distance(transform.position, player.transform.position) > 10)
         {
             state = States.Walk;
-            anim.SetBool("ATACCK", false);
-            anim.SetBool("MOVING", true);
+            anim.SetBool("isWalking", true);
         }
-    }
-    void RockAtacck()
-    {
-        anim.SetBool("ROCKATACCK", true);
-        anim.SetBool("MOVING", false);
     }
     void Death()
     {
-      
+        Destroy(gameObject);
     }
     void Damage()
     {

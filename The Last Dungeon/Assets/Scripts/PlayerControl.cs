@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -79,6 +80,12 @@ public class PlayerControl : MonoBehaviour
       {
          AiRanged.life = 0;
       }
+      if(_currentHealth <= 0)
+        {
+            SceneManager.LoadScene("YouDied");
+            ONLOAD._playerIsDead = true;
+            Debug.Log(ONLOAD._playerIsDead);
+        }
 
    }
  void FixedUpdate()

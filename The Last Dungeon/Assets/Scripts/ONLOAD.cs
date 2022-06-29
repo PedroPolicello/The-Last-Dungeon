@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ONLOAD : MonoBehaviour
 {
+    public static bool _playerIsDead;
 
     public GameObject PLP;
     public GameObject buttonPickUp;
@@ -13,6 +14,15 @@ public class ONLOAD : MonoBehaviour
     public GameObject swordSlot;
     public GameObject staffSlot;
     public GameObject bowSlot;
+
+    private void Update()
+    {
+        if (_playerIsDead == true || _playerIsDead)
+        {
+            gameObject.SetActive(false);
+            Debug.Log("iddead");
+        }
+    }
     private void Awake()
     {
         int Player = FindObjectsOfType<ONLOAD>().Length;
