@@ -10,6 +10,7 @@ public class DetectEnemys : MonoBehaviour
         {
             BossTroll.isInRange = true;
             Boss.isInRange = true;
+            AiRanged.isInRange = true;
         }
     }
 }

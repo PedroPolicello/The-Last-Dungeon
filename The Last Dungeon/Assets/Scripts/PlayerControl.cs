@@ -218,7 +218,7 @@ public class PlayerControl : MonoBehaviour
        {
          SpawEnimes._open = true;
        }
-       if(other.CompareTag("Head"))
+       if(other.CompareTag("Head") && Boss._isStuned == false)
         {
             TakeDamage(20);
             Debug.Log(_currentHealth);

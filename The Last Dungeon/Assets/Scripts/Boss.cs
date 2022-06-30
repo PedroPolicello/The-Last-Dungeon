@@ -14,7 +14,7 @@ public class Boss : MonoBehaviour
     // conta o tempo para os ataques
     private float _time;
     public static bool isInRange;
-
+    public static bool _isStuned;
 
     public enum States
     {
@@ -63,21 +63,13 @@ public class Boss : MonoBehaviour
         if (isInRange)
         {
             state = States.Walk;
-            if (Vector3.Distance(transform.position, player.transform.position) < 10)
+            if (Vector3.Distance(transform.position, player.transform.position) < 10 && !_isStuned)
             {
                 state = States.Attack;
             }
         }
     }
-    /* private void DoTimer(float countTime = 20f)
-     {
-         _time = Time.deltaTime;
-         if(_time >= countTime)
-         {
-            Debug.Log("deu Tempo");
-             _time = 0;
-         }
-     }*/
+   
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Sword"))
@@ -90,6 +82,10 @@ public class Boss : MonoBehaviour
             Vector3 l1 = player.transform.position - transform.position;
             myrot = Mathf.LerpAngle(myrot, Vector3.SignedAngle(transform.forward, l1, Vector3.up), Time.deltaTime * 10);
             transform.Rotate(new Vector3(0, myrot, 0));
+        }
+        if(other.CompareTag("shieldEquip"))
+        {
+            _isStuned = true;
         }
 
     }
@@ -141,6 +137,16 @@ public class Boss : MonoBehaviour
     void TakeDamage(int damage)
     {
         health -= damage;
+    }
+    void Dotimer(float time = 3f)
+    {
+        _time += Time.deltaTime;
+        if (_time >= time)
+        {
+            Debug.Log("deu Tempo");
+            _time = 0;
+            _isStuned = false;
+        }
     }
 
 }

@@ -18,7 +18,8 @@ public class AiRanged : MonoBehaviour
     public Vector3 pointshot;
     public bool atirando;
     float delay =0;
-    
+    public static bool isInRange;
+
     public enum States
     {
         Walk,
@@ -67,26 +68,24 @@ public class AiRanged : MonoBehaviour
         {
             state = States.Dead;
         }
-       
+        if (isInRange)
+        {
+            state = States.Attack;
+            if (Vector3.Distance(transform.position, player.transform.position) < 10)
+            {
+                Flecha(Time.time);
+            }
+        }
 
-        
+
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-           state = States.Attack;
-           Debug.Log("atirar");
-        }
+       
+        
         
     }
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-          state = States.Walk;
-        }
-    }
+   
     void Dead()
     {
       Destroy(gameObject);

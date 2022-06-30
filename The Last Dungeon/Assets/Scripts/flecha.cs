@@ -11,5 +11,9 @@ public class flecha : MonoBehaviour
        {
            Destroy(gameObject);
        }
+       if(other.CompareTag("shieldEquip"))
+        {
+            Destroy(gameObject);
+        }
    }
 }
