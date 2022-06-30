@@ -35,7 +35,7 @@ public class LOADSCENE : MonoBehaviour
             {
                 SpawnPlayer.changeScene = true;
                 SceneManager.LoadScene("DungeonGelo");
-                SpawnPlayer.spawnLocal = new Vector3(-436.8f, 7.95f, 572.52f);
+                SpawnPlayer.spawnLocal = new Vector3(0.3f, 22f, 63f);
             }
         }
     }

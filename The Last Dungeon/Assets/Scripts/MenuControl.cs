@@ -17,4 +17,15 @@ public class MenuControl : MonoBehaviour
         Application.Quit();
         print("Quit");
     }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Lobby");
+        ONLOAD._playerIsDead = false;
+    }
+
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+    }
 }

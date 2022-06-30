@@ -11,13 +11,13 @@ public class AiRanged : MonoBehaviour
     float myrot;
     public bool atacck;
     // --- vida do inimigo ---
-    public static float life = 100;
+    public float life = 100;
     // --- local de ataque ---
     public GameObject spawnFlecha;
     public GameObject flecha;
     public Vector3 pointshot;
     public bool atirando;
-    float delay =0;
+    float delay = 0;
     public static bool isInRange;
 
     public enum States
@@ -27,7 +27,7 @@ public class AiRanged : MonoBehaviour
         Dead,
         Damage,
         Shot
-       
+
     }
 
     public States state = States.Walk;
@@ -37,7 +37,7 @@ public class AiRanged : MonoBehaviour
         if (!chtr)
             chtr = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-       
+
     }
 
 
@@ -47,24 +47,24 @@ public class AiRanged : MonoBehaviour
 
         switch (state)
         {
-               case States.Walk:
-               walk();
-                  break;
-               case States.Attack:
-                     attack();
-                  break;
-               case States.Dead:
-                     Dead();
-                   break;
-                case States.Damage:
-                   break;
-                case States.Shot:
-                   shot();
+            case States.Walk:
+                walk();
                 break;
-                 
+            case States.Attack:
+                attack();
+                break;
+            case States.Dead:
+                Dead();
+                break;
+            case States.Damage:
+                break;
+            case States.Shot:
+                shot();
+                break;
+
         }
-      
-        if(life == 0)
+
+        if (life == 0)
         {
             state = States.Dead;
         }
@@ -76,25 +76,28 @@ public class AiRanged : MonoBehaviour
                 Flecha(Time.time);
             }
         }
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            life -= 50;
+        }
 
     }
     public void OnTriggerEnter(Collider other)
     {
-       
-        
-        
+
+
+
     }
-   
+
     void Dead()
     {
-      Destroy(gameObject);
-      SpawEnimes.control += 1;
-      Debug.Log(SpawEnimes.control);
+        Destroy(gameObject);
+        SpawEnimes.control += 1;
+        Debug.Log(SpawEnimes.control);
     }
     void walk()
     {
-        
+
     }
 
     void attack()
@@ -102,23 +105,23 @@ public class AiRanged : MonoBehaviour
 
         move = Vector3.forward * 1f;
         Vector3 l1 = player.transform.position - transform.position;
-        Vector3 dirwoy=new Vector3(l1.x,0,l1.z);
-        transform.forward=dirwoy;
+        Vector3 dirwoy = new Vector3(l1.x, 0, l1.z);
+        transform.forward = dirwoy;
 
 
 
         //conversao de direcao local pra global 
         Vector3 globalmove = transform.TransformDirection(move);
         chtr.SimpleMove(globalmove * 1);
-            
 
 
-    if (Vector3.Distance(transform.position, player.transform.position) < 7)
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 7)
         {
-              state = States.Shot;
+            state = States.Shot;
         }
-       
-        
+
+
     }
 
     void shot()
@@ -129,31 +132,33 @@ public class AiRanged : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.transform.position) < 7)
         {
-           Flecha(Time.time);
+            Flecha(Time.time);
         }
-        else 
+        else
         {
             state = States.Attack;
         }
 
     }
 
-    void Flecha(float tempo){
-            if(tempo>delay+2f){
+    void Flecha(float tempo)
+    {
+        if (tempo > delay + 2f)
+        {
 
-            
+
             pointshot = spawnFlecha.transform.position;
             GameObject clone = Instantiate(flecha, spawnFlecha.transform.position, gameObject.transform.rotation);
-            clone.transform.Rotate(0,gameObject.transform.rotation.y + 90,0);
+            clone.transform.Rotate(0, gameObject.transform.rotation.y + 90, 0);
 
-            
+
             //clone.transform.localRotation = Quaternion.identity;
             clone.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
             Destroy(clone, 0.6f);
-            delay=tempo;
-            }
+            delay = tempo;
+        }
 
     }
-   
+
 
 }

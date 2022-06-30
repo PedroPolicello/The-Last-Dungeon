@@ -85,7 +85,7 @@ public class BossTroll : MonoBehaviour
     }
     void Walk()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > 10)
+        if (Vector3.Distance(transform.position, player.transform.position) > 5)
         {
             footAttack.SetActive(false);
         }
@@ -100,7 +100,7 @@ public class BossTroll : MonoBehaviour
         chtr.SimpleMove(globalmove * 1);
 
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 7)
+        if (Vector3.Distance(transform.position, player.transform.position) < 5)
         {
             state = States.Attack;
           
@@ -119,7 +119,7 @@ public class BossTroll : MonoBehaviour
        // {
        //     anim.SetTrigger("SideAttack");
        // }
-        if (Vector3.Distance(transform.position, player.transform.position) > 7)
+        if (Vector3.Distance(transform.position, player.transform.position) > 5)
         {
             state = States.Walk;
             anim.SetBool("isWalking", true);

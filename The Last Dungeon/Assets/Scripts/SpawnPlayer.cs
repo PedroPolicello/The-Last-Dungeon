@@ -19,6 +19,7 @@ public class SpawnPlayer : MonoBehaviour
     public static bool abrirGelo;
     public GameObject cutsceneGelo;
 
+
     public void Awake()
     {
         if(changeScene == true)

@@ -76,10 +76,6 @@ public class PlayerControl : MonoBehaviour
          rgb.AddForce(0,2500,0);
          anim.SetFloat("jump" , 1);
       }
-      if(Input.GetKeyDown(KeyCode.O))
-      {
-         AiRanged.life = 0;
-      }
       if(_currentHealth <= 0)
         {
             SceneManager.LoadScene("YouDied");
@@ -114,16 +110,6 @@ public class PlayerControl : MonoBehaviour
                Defend();
                break;
        }
-       
-       if(Input.GetKeyDown(KeyCode.E))
-        {
-          TakeDamage(20);
-        }
-        if(_isStuned)
-        {
-           state = States.Stuned;
-           DoTimer();
-        }
         if(Input.GetKeyDown(KeyCode.Q) && ItemEquip.swordEquip) 
        {
           state = States.Attack;
@@ -218,10 +204,14 @@ public class PlayerControl : MonoBehaviour
        {
          SpawEnimes._open = true;
        }
-       if(other.CompareTag("Head") && Boss._isStuned == false)
+       if(other.CompareTag("Head"))
         {
             TakeDamage(20);
             Debug.Log(_currentHealth);
+        }
+       if(other.CompareTag("feet"))
+        {
+            TakeDamage(3);
         }
    }
    void OnTriggerExit(Collider other)
