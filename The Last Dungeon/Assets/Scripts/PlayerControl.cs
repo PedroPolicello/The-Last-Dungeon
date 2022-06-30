@@ -49,14 +49,14 @@ public class PlayerControl : MonoBehaviour
    }
    void Update()
    {
-      if(_isOnGround && !_isStuned)
+      if(_isOnGround )//&& !_isStuned)
       {
          _move = new Vector3(Input.GetAxisRaw("Horizontal"),0, Input.GetAxisRaw("Vertical"));
       }
       if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D)) 
       {
         rgb.constraints = RigidbodyConstraints.FreezeRotation;
-        rgb.velocity = new Vector3 (0,0,0);
+        //rgb.velocity = new Vector3 (0,0,0);
       }
         if (dummyCam) 
         {

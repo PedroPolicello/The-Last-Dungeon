@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Boss : MonoBehaviour
 {
+    public GameObject door;
+
     public static GameObject player;
     Animator anim;
     //Caracteristicas do Boss
@@ -20,7 +22,6 @@ public class Boss : MonoBehaviour
     {
         Walk,
         Attack,
-
         Death,
         TakeDamage,
         Idle
@@ -52,7 +53,7 @@ public class Boss : MonoBehaviour
         }
         if (health <= 0)
         {
-
+            door.SetActive(true);
             Destroy(gameObject);
         }
         if (Input.GetKeyDown(KeyCode.O))
@@ -63,7 +64,7 @@ public class Boss : MonoBehaviour
         if (isInRange)
         {
             state = States.Walk;
-            if (Vector3.Distance(transform.position, player.transform.position) < 10 && !_isStuned)
+            if (Vector3.Distance(transform.position, player.transform.position) < 10)
             {
                 state = States.Attack;
             }
@@ -96,7 +97,7 @@ public class Boss : MonoBehaviour
     void Walk()
     {
         anim.SetBool("isWalking", true);
-        move = Vector3.forward * 1f;
+        move = Vector3.forward * 5f;
         Vector3 l1 = player.transform.position - transform.position;
         Vector3 dirwoy = new Vector3(l1.x, 0, l1.z);
         transform.forward = dirwoy;

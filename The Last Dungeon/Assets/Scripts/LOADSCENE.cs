@@ -23,13 +23,13 @@ public class LOADSCENE : MonoBehaviour
             {
                 SpawnPlayer.changeScene = true;
                 SceneManager.LoadScene("DungeonCaverna");
-                SpawnPlayer.spawnLocal = new Vector3(-436.8f, 7.95f, 572.52f);
+                SpawnPlayer.spawnLocal = new Vector3(-80f, 4f, 32f);
             }
              else if (sceneToLoad == "DungeonFloresta")
             {
                 SpawnPlayer.changeScene = true;
                 SceneManager.LoadScene("DungeonFloresta");
-                SpawnPlayer.spawnLocal = new Vector3(-436.8f, 7.95f, 572.52f);
+                SpawnPlayer.spawnLocal = new Vector3(90f, 1f, 40f);
             }
              else if (sceneToLoad == "DungeonGelo")
             {

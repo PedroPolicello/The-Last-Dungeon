@@ -10,7 +10,6 @@ public class ItemEquip : MonoBehaviour
     public GameObject staff;
     public GameObject bow;
     public GameObject sword;
-    public GameObject Hand;
 
     public static bool shieldOn;
     public static bool staffOn;
@@ -27,7 +26,7 @@ public class ItemEquip : MonoBehaviour
            
             GameObject lastweapom1 = GameObject.Find("Cajado(Clone)");
             GameObject lastweapom2 = GameObject.Find("Arco (Clone)");
-            GameObject lastweapom3 = GameObject.Find("Espada(Clone)");
+            GameObject lastweapom3 = GameObject.Find("EspadaEquip(Clone)");
             Destroy(lastweapom1);
             Destroy(lastweapom2);
             Destroy(lastweapom3);
@@ -59,7 +58,7 @@ public class ItemEquip : MonoBehaviour
         {
             GameObject lastweapom1 = GameObject.Find("Escudo(Clone)");
             GameObject lastweapom2 = GameObject.Find("Arco (Clone)");
-            GameObject lastweapom3 = GameObject.Find("Espada(Clone)");
+            GameObject lastweapom3 = GameObject.Find("EspadaEquip(Clone)");
             Destroy(lastweapom1);
             Destroy(lastweapom2);
             Destroy(lastweapom3);
@@ -73,7 +72,7 @@ public class ItemEquip : MonoBehaviour
         {
             GameObject lastweapom1 = GameObject.Find("Escudo(Clone)");
             GameObject lastweapom2 = GameObject.Find("Cajado(Clone)");
-            GameObject lastweapom3 = GameObject.Find("Espada(Clone)");
+            GameObject lastweapom3 = GameObject.Find("EspadaEquip(Clone)");
             Destroy(lastweapom1);
             Destroy(lastweapom2);
             Destroy(lastweapom3);

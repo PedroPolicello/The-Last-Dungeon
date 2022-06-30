@@ -101,7 +101,7 @@ public class AiRanged : MonoBehaviour
     {
 
         move = Vector3.forward * 1f;
-            Vector3 l1 = player.transform.position - transform.position;
+        Vector3 l1 = player.transform.position - transform.position;
         Vector3 dirwoy=new Vector3(l1.x,0,l1.z);
         transform.forward=dirwoy;
 
