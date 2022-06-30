@@ -10,6 +10,7 @@ public class YouDied : MonoBehaviour
         if(other.tag == "Player")
         {
             SceneManager.LoadScene("YouDied");
+            ONLOAD._playerIsDead = true;
         }
     }
 }

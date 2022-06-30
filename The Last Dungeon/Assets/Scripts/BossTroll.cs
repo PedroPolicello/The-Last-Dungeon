@@ -6,13 +6,17 @@ public class BossTroll : MonoBehaviour
 {
     public static GameObject player;
     Animator anim;
-    //Caracteristicas do Boss
+   [Header("characterController do boss")]
     public CharacterController chtr;
     Vector3 move;
     float myrot;
     public float health;
     // conta o tempo para os ataques
     private float _time;
+    public static bool isInRange;
+
+    [Header("Area de ataque do pisão")]
+    public GameObject footAttack;
 
 
     public enum States
@@ -56,13 +60,17 @@ public class BossTroll : MonoBehaviour
             health -= 50;
             Debug.Log(health);
         }
+        if(isInRange)
+        {
+            state = States.Walk;
+            if (Vector3.Distance(transform.position, player.transform.position) < 7)
+            {
+                state = States.Attack;
+            }
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            state = States.Walk;
-        }
         if (other.CompareTag("swordAttack"))
         {
             TakeDamage(20);
@@ -71,19 +79,16 @@ public class BossTroll : MonoBehaviour
         }
 
     }
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            state = States.Idle;
-        }
-    }
     void Idle()
     {
         anim.SetBool("isWalking", false);
     }
     void Walk()
     {
+        if (Vector3.Distance(transform.position, player.transform.position) > 10)
+        {
+            footAttack.SetActive(false);
+        }
         anim.SetBool("isWalking", true);
         move = Vector3.forward * 1f;
         Vector3 l1 = player.transform.position - transform.position;
@@ -98,11 +103,13 @@ public class BossTroll : MonoBehaviour
         if (Vector3.Distance(transform.position, player.transform.position) < 7)
         {
             state = States.Attack;
+          
         }
 
     }
     void Attack()
     {
+        DoTimer();
         anim.SetBool("isWalking", false);
        // if (health > 50)
        // {
@@ -126,5 +133,18 @@ public class BossTroll : MonoBehaviour
     {
         health -= damage;
     }
-
+    private void DoTimer(float time = 2f)
+    {
+        _time += Time.deltaTime;
+        if (_time >= time)
+        {
+            Debug.Log("deu Tempo");
+            _time = 0;
+            footAttack.SetActive(true);
+        }
+       // else
+       // {
+       //     footAttack.SetActive(false);
+       // }
+    }
 }

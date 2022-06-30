@@ -218,6 +218,11 @@ public class PlayerControl : MonoBehaviour
        {
          SpawEnimes._open = true;
        }
+       if(other.CompareTag("Head"))
+        {
+            TakeDamage(20);
+            Debug.Log(_currentHealth);
+        }
    }
    void OnTriggerExit(Collider other)
    {
