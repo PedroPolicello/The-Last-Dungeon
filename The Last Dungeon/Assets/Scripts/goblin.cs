@@ -5,7 +5,6 @@ using UnityEngine;
 public class goblin : MonoBehaviour
 {
     public static GameObject player;
-    public GameObject door;
     Animator anim;
     //Caracteristicas do Boss
     public CharacterController chtr;
@@ -23,9 +22,9 @@ public class goblin : MonoBehaviour
     void Update()
     {
         move = Vector3.forward * 2f;
-        Vector3 l1 = player.transform.position - transform.position;
-        Vector3 dirwoy = new Vector3(l1.x, 0, l1.z);
-        transform.forward = dirwoy;
+        //Vector3 l1 = player.transform.position - transform.position;
+        //Vector3 dirwoy = new Vector3(l1.x, 0, l1.z);
+        //transform.forward = dirwoy;
         anim.SetBool("isRun", true);
 
         //conversao de direcao local pra global 
@@ -34,7 +33,6 @@ public class goblin : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            door.SetActive(true);
         }
     }
     private void OnTriggerEnter(Collider other)

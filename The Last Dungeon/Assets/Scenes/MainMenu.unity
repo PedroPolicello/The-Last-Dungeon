@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2037,7 +2037,7 @@ GameObject:
   - component: {fileID: 924102700}
   - component: {fileID: 924102699}
   m_Layer: 5
-  m_Name: Felipe Martins
+  m_Name: Felipe Moraes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2095,7 +2095,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Felipe Martins
+  m_Text: Felipe Moraes
 --- !u!222 &924102700
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3691,7 +3691,7 @@ GameObject:
   - component: {fileID: 1503273735}
   - component: {fileID: 1503273734}
   m_Layer: 5
-  m_Name: Thiago Oliveira
+  m_Name: Tiago Oliveira
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3713,7 +3713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82, y: -63}
+  m_AnchoredPosition: {x: 74.1, y: -63}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503273734
@@ -3749,7 +3749,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Thiago Oliveira
+  m_Text: Tiago Oliveira
 --- !u!222 &1503273735
 CanvasRenderer:
   m_ObjectHideFlags: 0

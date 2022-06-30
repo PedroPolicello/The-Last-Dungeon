@@ -8,7 +8,6 @@ public class DetectEnemys : MonoBehaviour
     {
         if(other.CompareTag("Porta"))
         {
-            BossTroll.isInRange = true;
             Boss.isInRange = true;
             AiRanged.isInRange = true;
         }
