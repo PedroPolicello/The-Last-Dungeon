@@ -4,16 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MenuControl : MonoBehaviour
 {
-
+    
     public void StartGame()
     {
+        new WaitForSeconds(10);
         SceneManager.LoadScene("CutSceneInicial");
         ONLOAD._playerIsDead = false;
     }
+
     public void Exit()
     {
         Application.Quit();
         print("Quit");
     }
-   
 }
